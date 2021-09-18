@@ -139,7 +139,8 @@ nav {
     justify-content: space-between;
     padding: 10px 15px;
   }
-  nav .navigate span {
+
+  nav .navigate i {
     display: inline-block;
     font-size: 20px;
     font-weight: bold;
@@ -150,7 +151,7 @@ nav {
     color: rgb(82, 82, 82);
     cursor: pointer;
   }
-  
+
   nav button {
     cursor: pointer;
     text-transform: uppercase;
