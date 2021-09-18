@@ -64,6 +64,7 @@ a{
     padding: 10px 15px;
     border-radius: 5px;
     opacity: 0.8;
+    transition: all 250ms;
 }
 
 .navigation_item:hover{
@@ -82,6 +83,7 @@ a{
     opacity: 0.8;
     display: flex;
     align-items: center;
+    transition: all 250ms;
 }
 
 .cta_item:hover{
