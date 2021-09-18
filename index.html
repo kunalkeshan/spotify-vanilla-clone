@@ -8,7 +8,6 @@
     <script defer src="https://pro.fontawesome.com/releases/v5.10.0/js/all.js" integrity="sha384-G/ZR3ntz68JZrH4pfPJyRbjW+c0+ojii5f+GYiYwldYU69A+Ejat6yIfLSxljXxD" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="container">
         <div id="sidebar">
             <div id="logo">
                 <img src="images/logo.png" alt="spotify logo" />
@@ -61,7 +60,41 @@
                 </div>
             </d>
         </div>
-        <div id="content"></div>
-    </div>
+        <div id="content">
+            <nav>
+                <!-- <div class="navigate">
+                  <i class="far fa-chevron-left"></i>
+                  <i class="far fa-chevron-right"></i>
+                </div> -->
+                <div class="navigate">
+                    <span>&lt;</span>
+                    <span>&gt;</span>
+                  </div>
+                <div class="buttons">
+                  <button class="btn btn-upgrade">upgrade</button>
+                  <div class="profile-dropdown">
+                    <div class="visible">
+                      <img src="images/user.png" alt="User" />
+                      <span id="user">Kunal Keshan</span>
+                      <i class="fas fa-sort-down arrow"></i>
+                    </div>
+                    <div class="hidden">
+                      <ul>
+                        <li class="link">
+                          Account
+                          <i class="far fa-external-link-alt"></i>
+                        </li>
+                        <li>Profile</li>
+                        <li class="link">
+                          Upgrade to Premium
+                          <i class="far fa-external-link-alt"></i>
+                        </li>
+                        <li>Log out</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </div>
 </body>
 </html>
