@@ -4,99 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify - Web Player</title>
-    <link rel="icon" href="logo.png" />
+    <link rel="icon" href="images/icon.png" />
     <link rel="stylesheet" href="css/style.css">
     <link
     rel="stylesheet"
     href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
     crossorigin="anonymous"
-  />
+    />
 </head>
 <body>
-        <div id="sidebar">
-            <div id="logo">
-                <img src="images/logo.png" alt="spotify logo" />
-            </div>
-            <div id="navigation">
-                <a href="#" class="navigation_item">
-                    <i class="fas fa-home"></i> 
-                    <span>Home</span>
-                </a>
-                <a href="#" class="navigation_item">
-                    <i class="fas fa-search"></i> 
-                    <span>Search</span>
-                </a>
-                <a href="#" class="navigation_item">
-                    <i class="fas fa-grip-lines-vertical"></i> 
-                    <span>Your Library</span>
-                </a>
-            </div>
-            <div id="cta">
-                <a href="#" class="cta_item">
-                    <span class="cta__icon" id="plus">
-                        <i class="fas fa-plus"></i>
-                    </span> 
-                    <span>Create Playlist</span>
-                </a>
-                <a href="#" class="cta_item">
-                    <span class="cta__icon" id="heart">
-                        <i class="fas fa-heart"></i>
-                    </span> 
-                    <span>Liked Songs</span>
-                </a>
-                <a href="#" class="cta_item">
-                    <span class="cta__icon" id="podcast">
-                        <i class="fas fa-podcast"></i>
-                    </span> 
-                    <span>Your Episodes</span>
-                </a>
-            </div>
-            <hr class="line" />
-            <div id="bottom">
-                <ul id="music__list">
-                    <li class="music__item"><a href="#" class="music__link">Music Hip-Hop 1</a></li>
-                    <li class="music__item"><a href="#" class="music__link">Music Hip-Hop 2</a></li>
-                    <li class="music__item"><a href="#" class="music__link">Music Hip-Hop 3</a></li>
+  <div id="sidebar">
+      <div id="logo">
+          <img src="images/logo.png" alt="spotify logo" />
+      </div>
+      <div id="navigation">
+          <a href="#" class="navigation_item">
+              <i class="fas fa-home"></i> 
+              <span>Home</span>
+          </a>
+          <a href="#" class="navigation_item">
+              <i class="fas fa-search"></i> 
+              <span>Search</span>
+          </a>
+          <a href="#" class="navigation_item">
+              <i class="fas fa-grip-lines-vertical"></i> 
+              <span>Your Library</span>
+          </a>
+      </div>
+      <div id="cta">
+          <a href="#" class="cta_item">
+              <span class="cta__icon" id="plus">
+                  <i class="fas fa-plus"></i>
+              </span> 
+              <span>Create Playlist</span>
+          </a>
+          <a href="#" class="cta_item">
+              <span class="cta__icon" id="heart">
+                  <i class="fas fa-heart"></i>
+              </span> 
+              <span>Liked Songs</span>
+          </a>
+          <a href="#" class="cta_item">
+              <span class="cta__icon" id="podcast">
+                  <i class="fas fa-podcast"></i>
+              </span> 
+              <span>Your Episodes</span>
+          </a>
+      </div>
+      <hr class="line" />
+      <div id="bottom">
+          <ul id="music__list">
+              <li class="music__item"><a href="#" class="music__link">Music Hip-Hop 1</a></li>
+              <li class="music__item"><a href="#" class="music__link">Music Hip-Hop 2</a></li>
+              <li class="music__item"><a href="#" class="music__link">Music Hip-Hop 3</a></li>
+          </ul>
+          <div class="download__item">
+              <a href="#" id="download__link">
+                  <i class="fas fa-arrow-circle-down"></i> Install App
+              </a>
+          </div>
+      </d>
+  </div>
+  <div id="content">
+      <nav>
+          <div class="navigate">
+            <i class="far fa-chevron-left"></i>
+            <i class="far fa-chevron-right"></i>
+          </div>
+          <div class="buttons">
+            <button class="btn btn-upgrade">upgrade</button>
+            <div class="profile-dropdown">
+              <div class="visible">
+                <img src="images/user.png" alt="User" />
+                <span id="user">Kunal Keshan</span>
+                <i class="fas fa-sort-down arrow"></i>
+              </div>
+              <div class="hidden">
+                <ul>
+                  <li class="link">
+                    Account
+                    <i class="far fa-external-link-alt"></i>
+                  </li>
+                  <li>Profile</li>
+                  <li class="link">
+                    Upgrade to Premium
+                    <i class="far fa-external-link-alt"></i>
+                  </li>
+                  <li>Log out</li>
                 </ul>
-                <div class="download__item">
-                    <a href="#" id="download__link">
-                        <i class="fas fa-arrow-circle-down"></i> Install App
-                    </a>
-                </div>
-            </d>
-        </div>
-        <div id="content">
-            <nav>
-                <div class="navigate">
-                  <i class="far fa-chevron-left"></i>
-                  <i class="far fa-chevron-right"></i>
-                </div>
-                <div class="buttons">
-                  <button class="btn btn-upgrade">upgrade</button>
-                  <div class="profile-dropdown">
-                    <div class="visible">
-                      <img src="images/user.png" alt="User" />
-                      <span id="user">Kunal Keshan</span>
-                      <i class="fas fa-sort-down arrow"></i>
-                    </div>
-                    <div class="hidden">
-                      <ul>
-                        <li class="link">
-                          Account
-                          <i class="far fa-external-link-alt"></i>
-                        </li>
-                        <li>Profile</li>
-                        <li class="link">
-                          Upgrade to Premium
-                          <i class="far fa-external-link-alt"></i>
-                        </li>
-                        <li>Log out</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-        </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+  </div>
+  <div id="player">
+    <div id="player__artist">
+      <img src="images/artist_image.jpeg" alt="artist image" class="artist_image" />
+      <span class="artist_details">
+        <a class="song">Eternal Youth</a>
+        <a class="artist">RUDE</a>
+      </span>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-external-link-alt"></i>
+    </div>
+    <div id="player__controls">
+      <div id="controls">
+        <i class="fas fa-random"></i>
+        <i class="fas fa-step-backward"></i>
+        <i class="fas fa-play-circle"></i>
+        <i class="fas fa-step-forward"></i>
+        <i class="fas fa-retweet"></i>
+      </div>
+      <div id="timeline">
+        <div class="time">0:00</div>
+        <hr class="player_line"/>
+        <div class="time">3:25</div>
+      </div>
+    </div>
+    <div id="player__cta">
+      <i class="fas fa-list"></i>
+      <i class="fas fa-desktop"></i>
+      <i class="fas fa-volume-up"></i>
+      <hr class="speaker_line"/>
+    </div>
+  </div>
 </body>
 </html>
