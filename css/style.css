@@ -47,7 +47,7 @@ a{
 
 #logo > img{
     cursor: pointer;
-    width: 200px;
+    width: 150px;
     margin: 20px 10px;
 }
 
@@ -230,4 +230,80 @@ nav {
   nav .profile-dropdown ul li.link i {
     float: right;
   }
+
+
+#player{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #181818;
+  color: #ffffff;
+}
+
+#player__artist{
+  display: flex;
+  align-items: center;
+}
+
+#player__artist > * {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.artist_image{
+  width: 60px;
+  height: auto;
+}
+
+.artist_details > a{
+  display: block;
+  cursor: pointer;
+}
+
+.artist_details > a:hover{
+  text-decoration: underline;
+}
+
+#player__controls{
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#controls > *{
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.player_line{
+  width: 150px;
+  margin: 0 5px;
+}
+
+#timeline{
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#player__cta{
+  display: flex;
+  align-items: center;
+}
+
+#player__cta > *{
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.speaker_line{
+  width: 50px;
+}
   
