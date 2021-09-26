@@ -242,7 +242,15 @@ nav {
   align-items: center;
   justify-content: space-between;
   background: #181818;
-  color: #ffffff;
+  color: #fff;
+}
+
+#player i{
+  color: rgb(82, 82, 82);
+}
+
+#player i:hover{
+  color: #fff;
 }
 
 #player__artist{
