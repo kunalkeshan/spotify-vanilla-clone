@@ -24,6 +24,7 @@ a{
     color: #FFF;
 }
 
+/* Sidebar Styling */
 #sidebar{
     position: fixed;
     top: 0;
@@ -32,6 +33,11 @@ a{
     padding: 20px;
     background: var(--background-color-sidebar);
     height: 100%;
+    overflow-y: scroll;
+}
+
+#sidebar::-webkit-scrollbar{
+  display: none;
 }
 
 #content{
@@ -43,6 +49,16 @@ a{
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100%;
+  overflow-y: scroll;
+
+}
+
+#content::-webkit-scrollbar{
+  width: 10px;
+}
+
+#content::-webkit-scrollbar-thumb{
+  background-color: #fff5;
 }
 
 #logo > img{
@@ -137,12 +153,18 @@ a{
     justify-self: flex-end;
 }
 
-
+/* Nav bar styling */
 
 nav {
     display: flex;
     justify-content: space-between;
     padding: 10px 15px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    background-color: #1E1E1E;
+
   }
 
   nav .navigate i {
@@ -233,6 +255,7 @@ nav {
     float: right;
   }
 
+  /* Music Player head styling */
 
 #player{
   position: fixed;
@@ -321,6 +344,7 @@ nav {
 
 #main{
   padding: 1em;
+  margin-top: 3em;
   color: #fff;
 }
 
@@ -328,18 +352,94 @@ nav {
   flex-direction: row-reverse;
 }
 
-
-.display{
-
+.card__container{
+  padding: 1em;
 }
 
-.display__card_container{
+.card__title{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-flow: wrap;
 }
 
-.display__card_side{
-
+.card__title p{
+  color: rgb(139, 139, 139);
+  cursor: pointer;
 }
+
+.card__collection{
+  display: flex;
+  margin-right: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card_top{
+  display: flex;
+  margin: 15px;
+  background-color: #5759577a;
+  align-items: center;
+  height: fit-content;
+  border-radius: 10px;
+  width: 300px;
+  transition: all 250ms;
+}
+
+.card_top:hover{
+  background-color: #575957;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.card_top > * {
+  margin-right: 10px;
+}
+
+.card_top img{
+  width: 75px;
+  height: 75px;
+  border-radius: 10px 0 0 10px;
+}
+
+.card_top .card__info{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.card_top .fa-circle{
+  color: blue;
+  margin-left: auto;
+}
+
+.card__collection_main{
+  display: flex;
+  margin-right: 15px;
+  align-items: center;
+  overflow-x: scroll;
+}
+
+.card__collection_main::-webkit-scrollbar {
+    display: none;
+}
+
+.card{
+  border-radius: 10px;
+  padding: 1em;
+  background-color: #21212170;
+  margin: 15px;
+  transition: all 250ms;
+}
+
+.card:hover{
+  background-color: #212121;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.card > img{
+  width: 200px;
+  border-radius: 10px;
+}
+
