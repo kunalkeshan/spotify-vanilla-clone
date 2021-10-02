@@ -137,6 +137,8 @@ a{
     justify-self: flex-end;
 }
 
+
+
 nav {
     display: flex;
     justify-content: space-between;
