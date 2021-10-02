@@ -317,3 +317,29 @@ nav {
   width: 50px;
 }
   
+/* Main Body Section */
+
+#main{
+  padding: 1em;
+  color: #fff;
+}
+
+.reverse{
+  flex-direction: row-reverse;
+}
+
+
+.display{
+
+}
+
+.display__card_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+
+.display__card_side{
+
+}
