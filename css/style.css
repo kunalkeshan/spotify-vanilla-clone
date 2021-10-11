@@ -418,6 +418,7 @@ nav {
   margin-right: 15px;
   align-items: center;
   overflow-x: scroll;
+  transition: all 250ms;
 }
 
 .card__collection_main::-webkit-scrollbar {
@@ -443,3 +444,6 @@ nav {
   border-radius: 10px;
 }
 
+#pauseBtn{
+  display: none;
+}

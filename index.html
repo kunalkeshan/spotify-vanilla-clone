@@ -12,6 +12,7 @@
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
     crossorigin="anonymous"
     />
+    <script src="js/script.js"></script>
 </head>
 <body>
   <div id="sidebar">
@@ -258,6 +259,11 @@
               <p>SEE ALL</p>
             </div>
             <div class="card__collection_main">
+              <!-- LIKED SONG HERE -->
+              <div class="liked">
+
+              </div>
+              <!-- TILL HERE -->
               <div class="card">
                 <img src="images/content/keepingIt.png" alt="Keeping It ">
                 <div class="card__info">
@@ -361,7 +367,7 @@
         <a class="song">Eternal Youth</a>
         <a class="artist">RUDE</a>
       </span>
-      <i class="fas fa-heart" title="Like Song"></i>
+      <i class="fas fa-heart" title="Like Song" id="like"></i>
       <i class="fas fa-external-link-alt"></i>
     </div>
     <div id="player__controls">
@@ -369,6 +375,7 @@
         <i class="fas fa-random" title="Enable Shuffle"></i>
         <i class="fas fa-step-backward" title="Previous"></i>
         <i class="fas fa-play-circle" id="playBtn" title="Play"></i>
+        <i class="fas fa-pause-circle" id="pauseBtn" title="Pause"></i>
         <i class="fas fa-step-forward" title="Next"></i>
         <i class="fas fa-retweet" title="Repeat"></i>
       </div>
