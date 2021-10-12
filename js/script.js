@@ -44,28 +44,6 @@ const fetchData = async (url = "") => {
     }
 }
 
-const createCard = (song) => {
-    const card = 
-    `<div class="card"> 
-        <img src="${song.image}" alt="${song.name}">  
-        <div class="card_info"> 
-            <p class="card_name">${song.name}</p> 
-            <p class="card_artist">${song.artist}</p> 
-        </div> 
-    </div>`;
-    addFunctionalityToCard(song)
-    return card;
-}
-
-const addFunctionalityToCard = (song) => {
-    let cards = document.querySelectorAll(".card");
-    cards.forEach((card) => {
-        card.addEventListener("click", () => {
-            updatePlayer(song)
-        })
-    });
-}
-
 const updatePlayer = ({name, artist, location, image, liked}) => {
     const songContainer = document.querySelector(".song");
     const artistContainer = document.querySelector(".artist");
@@ -75,13 +53,6 @@ const updatePlayer = ({name, artist, location, image, liked}) => {
     const song = new Audio(location);
     var duration = null;
 
-    song.onloadedmetadata = () => {
-        duration = song.duration;
-        duration = Math.round(duration/60);
-    }
-
-    console.log(duration)
-    
     songContainer.innerHTML = name;
     artistContainer.innerHTML = artist;
     
@@ -89,28 +60,69 @@ const updatePlayer = ({name, artist, location, image, liked}) => {
     if(liked){
         likeBtn.style.color = "red";
     }
-
     artistImage.src = image;
-    endTime.innerHTML = duration + ":00";
+
+    song.onloadedmetadata = () => {
+        duration = song.duration;
+        duration = (duration/60).toPrecision(3);
+        endTime.innerHTML = duration + "";
+    }
     
 }
 
+const createCard = (song) => {
+    // const card = 
+    // `<div class="card"> 
+    //     <img src="${song.image}" alt="${song.name}">  
+    //     <div class="card_info"> 
+    //         <p class="card_name">${song.name}</p> 
+    //         <p class="card_artist">${song.artist}</p> 
+    //     </div> 
+    // </div>`;
+    const card = document.createElement("div");
+    const img = document.createElement("img");
+    const cardInfo = document.createElement("div");
+    const cardName = document.createElement("p");
+    const cardArtist = document.createElement("p");
+
+    card.className = "card";
+    cardInfo.className = "card_info";
+    cardName.className = "card_name";
+    cardArtist.className = "card_artist";
+
+    cardName.innerHTML = song.name;
+    cardArtist.innerHTML = song.artist;
+    img.src = song.image;
+    img.alt = song.name;
+
+    cardInfo.append(cardName, cardArtist);
+    card.append(img, cardInfo);
+
+    card.onclick = function(){
+        updatePlayer(song)
+    }
+
+    return card;
+}
 document.addEventListener("DOMContentLoaded", async() => {
     const PATH = "./data/data.json";
     const {songs} = await fetchData(PATH);
     const cardCollection = document.querySelectorAll(".card__collection_main");
     cardCollection.forEach((collection, index) => {
-        songs.forEach((song) => {
-            if(index === 0){
+        if(index === 0){
+            songs.forEach((song) => {
                 if(song.liked){
-                    collection.innerHTML += createCard(song, song)
+                    collection.append(createCard(song));
                 }
-            } else {
-                if(index%2 === 0){
-                    collection.classList.toggle("reverse")
-                }
-                collection.innerHTML += createCard(song)
-            }
-        })
+            })
+        } else {
+            songs.forEach((song) => {
+                collection.append(createCard(song));
+            });
+        }
+
+        if(index%2 !== 0){
+            collection.classList.toggle("reverse")
+        }
     })
 })
