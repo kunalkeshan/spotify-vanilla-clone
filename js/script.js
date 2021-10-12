@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var playBtn = document.querySelector("#playBtn")
     var PauseBtn = document.querySelector("#pauseBtn")
-    var music = new Audio('assets/Eternal.mp3')
+    var music = new Audio('./assets/Eternal.mp3')
     var like = document.querySelector("#like")
     var likedSong = document.querySelector(".liked")
 
@@ -32,4 +32,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })
 
+});
+
+const fetchData = async (url = "") => {
+    try {
+        const response = await fetch(url);
+        if(response){
+            let data = await response.json();
+            return data;
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const createCard = ({name, artist, song, image}) => {
+    const card = 
+    `<div class="card"> 
+        <img src="${image}" alt="${name}">  
+        <div class="card_info"> 
+            <p class="card_name">${name}</p> 
+            <p class="card_artist">${artist}</p> 
+        </div> 
+    </div>`;
+    return card;
+}
+
+document.addEventListener("DOMContentLoaded", async() => {
+    const PATH = "./data/data.json";
+    const {songs} = await fetchData(PATH);
 })
