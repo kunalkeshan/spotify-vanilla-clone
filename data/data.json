@@ -3,45 +3,51 @@
         {
             "name": "Eternal Youth",
             "artist": "Rude",
-            "song": "./assets/Eternal.mp3",
+            "location": "./assets/Eternal.mp3",
             "image": "./images/artist_image.jpeg",
-            "id": 0
+            "liked": true
         },
         {
             "name": "Never Gonna Give You Up",
             "artist": "Rick Astely",
-            "song": "./assets/NGGYU.mp3",
-            "image": "./images/content/nggyp.jpg"
+            "location": "./assets/NGGYU.mp3",
+            "image": "./images/content/nggyp.jpg",
+            "liked": false
         },
         {
             "name": "Keeping It",
             "artist": "Sou",
-            "song": "./assets/keepingit.mp3",
-            "image": "./images/content/keepingIt.png"
+            "location": "./assets/keepingit.mp3",
+            "image": "./images/content/keepingIt.png",
+            "liked": false
         },
         {
             "name": "Eye of the Tiger",
             "artist": "Surviour",
-            "song": "./assets/eyeTiger.mp3",
-            "image": "./images/content/survivor.jpg"
+            "location": "./assets/eyeTiger.mp3",
+            "image": "./images/content/survivor.jpg",
+            "liked": false
         },
         {
             "name": "Kenny G Collection",
             "artist": "Kenny G",
-            "song": "./assets/kenny.mp3",
-            "image": "./images/content/kennyg.jpg"
+            "location": "./assets/kenny.mp3",
+            "image": "./images/content/kennyg.jpg",
+            "liked": false
         },
         {
             "name": "Noctornal",
             "artist": "The Midnight",
-            "song": "./assets/noctornal.mp3",
-            "image": "./images/content/noctornal.jpg"
+            "location": "./assets/noctornal.mp3",
+            "image": "./images/content/noctornal.jpg",
+            "liked": false
         },
         {
             "name": "Unravel",
             "artist": "TK",
-            "song": "./assets/unravel.mp3",
-            "image": "./images/content/unravel.jpg"
+            "location": "./assets/unravel.mp3",
+            "image": "./images/content/unravel.jpg",
+            "liked": false
         }
     ]
 }
