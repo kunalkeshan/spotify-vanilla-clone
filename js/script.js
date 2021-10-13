@@ -44,7 +44,7 @@ const fetchData = async (url = "") => {
     }
 }
 
-const updatePlayer = ({name, artist, location, image, liked}) => {
+const updatePlayer = ({name, artist, location, image, liked, id}) => {
     const songContainer = document.querySelector(".song");
     const artistContainer = document.querySelector(".artist");
     const likeBtn = document.getElementById("like");
@@ -57,6 +57,7 @@ const updatePlayer = ({name, artist, location, image, liked}) => {
     artistContainer.innerHTML = artist;
     
     likeBtn.style.color = "grey";
+    likeBtn.id = id
     if(liked){
         likeBtn.style.color = "red";
     }
@@ -104,9 +105,8 @@ const createCard = (song) => {
 
     return card;
 }
-document.addEventListener("DOMContentLoaded", async() => {
-    const PATH = "./data/data.json";
-    const {songs} = await fetchData(PATH);
+
+const updateCollection = (songs) => {
     const cardCollection = document.querySelectorAll(".card__collection_main");
     cardCollection.forEach((collection, index) => {
         if(index === 0){
@@ -125,4 +125,10 @@ document.addEventListener("DOMContentLoaded", async() => {
             collection.classList.toggle("reverse")
         }
     })
+}
+
+document.addEventListener("DOMContentLoaded", async() => {
+    const PATH = "./data/data.json";
+    const {songs} = await fetchData(PATH);
+    updateCollection(songs);
 })
