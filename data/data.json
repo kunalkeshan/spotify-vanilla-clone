@@ -19,7 +19,7 @@
         {
             "name": "Keeping It",
             "artist": "Sou",
-            "location": "./assets/keepingit.mp3",
+            "location": "./assets/keepingIt.mp3",
             "image": "./images/content/keepingIt.png",
             "liked": false,
             "id": 2
