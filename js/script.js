@@ -57,7 +57,6 @@ const updatePlayer = ({name, artist, location, image, liked, id}) => {
     artistContainer.innerHTML = artist;
     
     likeBtn.style.color = "grey";
-    likeBtn.id = id
     if(liked){
         likeBtn.style.color = "red";
     }
