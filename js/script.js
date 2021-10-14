@@ -93,11 +93,12 @@ const {songs} = {
             "id": 6
         }
     ]
-}
+};
 
+const playerHead = document.getElementById("player");
 let playBtn = document.getElementById("playBtn");
 let pauseBtn = document.getElementById("pauseBtn");
-const playerHead = document.getElementById("player");
+let cardCollection = document.querySelectorAll(".card__collection_main");
 let currentSong = new Audio();
 
 playerHead.style.display = "none"
@@ -128,15 +129,7 @@ const updatePlayer = ({name, artist, location, image, liked, id}) => {
 
     songContainer.innerHTML = name;
     artistContainer.innerHTML = artist;
-    
-    likeBtn.style.color = "grey";
-    if(liked){
-        likeBtn.style.color = "red";
-    }
     artistImage.src = image;
-
-    currentSong.pause();
-    currentSong.currentTime = 0;
 
     currentSong.onloadedmetadata = () => {
         let duration = currentSong.duration;
@@ -149,9 +142,11 @@ const updatePlayer = ({name, artist, location, image, liked, id}) => {
     if(liked){
         likeBtn.style.color = "red";
     }
+
     likeBtn.onclick = function () {
-        likeSong(likeBtn.id, likeBtn);
-    }    
+        likeSong(likeBtn.id, likeBtn, name);
+    }   
+    
 
     playBtn.style.display = "inline";
     pauseBtn.style.display = "none";
@@ -162,6 +157,7 @@ const updatePlayer = ({name, artist, location, image, liked, id}) => {
 const playPauseFunc = (song) => {
     playBtn = document.getElementById("playBtn");
     pauseBtn = document.getElementById("pauseBtn");
+    
     playBtn.addEventListener("click", () => {
         song.play();
         playBtn.style.display = "none";
@@ -174,38 +170,26 @@ const playPauseFunc = (song) => {
     });
 }
 
-const likeSong = (id, likeBtn) => {
-    const cardCollection = document.querySelectorAll(".card__collection_main");
-    const likedSongs = cardCollection[0].childNodes
+const likeSong = (id, likeBtn, songName) => {
+    cardCollection = document.querySelectorAll(".card__collection_main");
+    let likedSongs = cardCollection[0].children;
+    likedSongs = Array.from(likedSongs);
 
-    songs.forEach((song, index) => {
-        if(song.id == id){
-            if(song.liked){
-                song.liked = false;
-                likeBtn.style.color = "grey";
-            } else {
-                song.liked = true;
-                likeBtn.style.color = "red";
+    if(songs[id].liked){
+        songs[id].liked = false;
+        likeBtn.style.color = "grey";
+        likedSongs.forEach(songCard => {
+            const name = songCard.lastChild.firstChild.innerHTML;
+            if(name == songName){
+                songCard.style.display = "none";
+                songCard.remove();
             }
-            likedSongs.forEach(songCard => {
-                if(songCard.hasChildNodes()){
-                    console.log(song.name)
-                    const name = songCard.lastChild.firstChild.innerHTML
-                    if(name != song.name){
-                        cardCollection[0].append(createCard(song));
-                    } else {
-                        songCard.style.display = "none";
-                        songCard.remove();
-                    }
-                }
-            });
-        }
-    })
-    // if(likeBtnColor === "red"){
-    //     likeBtn.style.color = "grey";
-    // } else {
-    //     likeBtn.style.color = "red";
-    // }
+        });
+    } else {
+        songs[id].liked = true;
+        likeBtn.style.color = "red";
+        cardCollection[0].append(createCard(songs[id]));
+    }
 }
 
 const createCard = (song) => {
@@ -228,7 +212,7 @@ const createCard = (song) => {
     cardInfo.append(cardName, cardArtist);
     card.append(img, cardInfo);
 
-    card.onclick = function(){
+    card.onclick = function(event){
         playerHead.style.display = "flex";
         currentSong = updatePlayer(song);
         playPauseFunc(currentSong);
@@ -238,7 +222,7 @@ const createCard = (song) => {
 }
 
 const updateCollection = () => {
-    const cardCollection = document.querySelectorAll(".card__collection_main");
+    cardCollection = document.querySelectorAll(".card__collection_main");
     cardCollection.forEach((collection, index) => {
         if(index === 0){
             songs.forEach((song) => {
