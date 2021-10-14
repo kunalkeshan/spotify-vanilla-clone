@@ -128,6 +128,11 @@ const updatePlayer = ({name, artist, location, image, liked, id}) => {
 
     songContainer.innerHTML = name;
     artistContainer.innerHTML = artist;
+    
+    likeBtn.style.color = "grey";
+    if(liked){
+        likeBtn.style.color = "red";
+    }
     artistImage.src = image;
 
     currentSong.pause();
