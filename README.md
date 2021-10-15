@@ -1,5 +1,5 @@
 # spotify-vanilla-clone
-A non-responsive clone of open.spotify.com. 
+A responsive clone of [open.spotify.com.](https://open.spotify.com/) 
 
 # Tech Stacks Used
 
