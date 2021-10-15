@@ -61,9 +61,14 @@ a{
   background-color: #fff5;
 }
 
+#logo{
+  width: clamp(100px, 100%,150px);
+}
+
 #logo > img{
     cursor: pointer;
-    width: 150px;
+    width: 100%;
+    height: auto;
     margin: 20px 10px;
 }
 
@@ -382,7 +387,7 @@ nav {
   align-items: center;
   height: fit-content;
   border-radius: 10px;
-  width: 300px;
+  width: clamp(100px, 100%, 300px);
   transition: all 250ms;
 }
 
@@ -446,4 +451,49 @@ nav {
 
 #pauseBtn{
   display: none;
+}
+
+@media(max-width: 800px){
+
+  #sidebar{
+    display: none;
+  }
+
+  #content{
+    width: 100%;
+  }
+
+  nav{
+    width: 100%;
+  }
+
+  .card_top, .card{
+    transform: scale(0.8);
+  }
+
+  #player__cta{
+    display: none;
+  }
+
+  #player__artist{
+    width: clamp(100px, 100%, 300px);
+    justify-content: space-around;
+  }
+
+  #controls{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #controls i{
+    transform: scale(1.5)
+  }
+
+  #player{
+    flex-direction: column-reverse;
+    height: 175px;
+    align-items: center;
+    justify-content: center;
+  }
 }
