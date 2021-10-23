@@ -12,10 +12,12 @@
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
     crossorigin="anonymous"
     />
-    <script type="application/javascript" src="js/script.js"></script>
-    <!-- <script type="application/javascript" src="data/data.json"></script> -->
+    <script type="application/javascript" defer src="js/script.js"></script>
 </head>
 <body>
+
+  <!-- Sidebar -->
+
   <div id="sidebar">
       <div id="logo">
           <img src="images/logo.png" alt="spotify logo" />
@@ -68,7 +70,13 @@
           </div>
     </div>
   </div>
+
+  <!-- Content Section, inclues the navbar and the main content -->
+
   <div id="content">
+
+    <!-- NavBar -->
+
       <nav>
           <div class="navigate">
             <i class="far fa-chevron-left"></i>
@@ -99,7 +107,13 @@
             </div>
           </div>
         </nav>
+
+        <!-- Main Content -->
+
         <main id="main">
+
+          <!-- Top Card Collection -->
+
           <div class="card__container">
             <div class="card__title">
               <h1 class="card__heading">Good Evening</h1>
@@ -151,47 +165,54 @@
               </div>
             </div>
           </div>
-          <!-- Card container -->
+
+          <!-- Common Card Containers  -->
+
           <div class="card__container">
             <div class="card__title">
               <h1 class="card__heading">Your Liked Songs</h1>
               <p>SEE ALL</p>
             </div>
-            <div class="card__collection_main">
-             
-            </div>
+
+            <!-- Card Collection, music content is added dynamically with JavaScript -->
+
+            <div class="card__collection_main"></div>
           </div>
-          <!-- card container  -->
           <div class="card__container">
             <div class="card__title">
               <h1 class="card__heading">Your Collection</h1>
               <p>SEE ALL</p>
             </div>
-            <div class="card__collection_main reverse">
-              
-            </div>
+
+            <!-- Card Collection, music content is added dynamically with JavaScript -->
+
+            <div class="card__collection_main reverse"></div>
           </div>
-      
           <div class="card__container">
             <div class="card__title">
               <h1 class="card__heading">Your Songs</h1>
               <p>SEE ALL</p>
             </div>
-            <div class="card__collection_main reverse">
-              
-            </div>
+
+            <!-- Card Collection, music content is added dynamically with JavaScript -->
+
+            <div class="card__collection_main reverse"></div>
           </div>
           <div class="card__container">
             <div class="card__title">
               <h1 class="card__heading">Your Collection</h1>
               <p>SEE ALL</p>
             </div>
-            <div class="card__collection_main reverse">
-             
-            </div>
+
+            <!-- Card Collection, music content is added dynamically with JavaScript -->
+
+            <div class="card__collection_main reverse"></div>
           </div>
         </main>
   </div>
+
+  <!-- Music Player Head -->
+
   <div id="player">
     <div id="player__artist">
       <img src="images/artist_image.jpeg" alt="artist image" class="artist_image" />
@@ -199,7 +220,7 @@
         <a class="song">Eternal Youth</a>
         <a class="artist">RUDE</a>
       </span>
-      <i class="fas fa-heart" title="Like Song" id="like"></i>
+      <i class="fas fa-heart likeBtn" title="Like Song"></i>
       <i class="fas fa-external-link-alt"></i>
     </div>
     <div id="player__controls">

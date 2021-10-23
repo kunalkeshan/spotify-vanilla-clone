@@ -1,4 +1,22 @@
+/* TABLE OF CONTENT
+
+if you're using VS Code, use Ctrl + F to search what you need.
+
+1. Global Styling.
+2. Sidebar Styling.
+3. Nav bar styling.
+4. Main Section styling. Card collection and cards.
+5. Music Player Head Styling.
+6. Responsiveness with @media
+
+*/
+
+
+/* Global Styling */
+
+/* Importing fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap");
+
 
 *, *::after, *::before{
     margin: 0;
@@ -45,7 +63,6 @@ a{
     top: 0;
     right: 0;
     width: 80%;
-/*     background: linear-gradient(0deg, rgb(17, 17, 17) 0%, rgb(19, 19, 19) 30%, rgba(22, 22, 22, 1) 50%, #202020 100%); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100%;
@@ -61,9 +78,14 @@ a{
   background-color: #fff5;
 }
 
+#logo{
+  width: clamp(100px, 100%,150px);
+}
+
 #logo > img{
     cursor: pointer;
-    width: 150px;
+    width: 100%;
+    height: auto;
     margin: 20px 10px;
 }
 
@@ -341,6 +363,7 @@ nav {
 }
   
 /* Main Body Section */
+/* includes, card collection and cards styling */
 
 #main{
   padding: 1em;
@@ -382,7 +405,7 @@ nav {
   align-items: center;
   height: fit-content;
   border-radius: 10px;
-  width: 300px;
+  width: clamp(100px, 100%, 300px);
   transition: all 250ms;
 }
 
@@ -446,4 +469,53 @@ nav {
 
 #pauseBtn{
   display: none;
+}
+
+/* Adding Resposiveness to the app */
+/* Removes the sidebar, adjusts the player head and makes some  */
+/* changes to the scale of the cards. */
+
+@media(max-width: 800px){
+
+  #sidebar{
+    display: none;
+  }
+
+  #content{
+    width: 100%;
+  }
+
+  nav{
+    width: 100%;
+  }
+
+  .card_top, .card{
+    transform: scale(0.8);
+  }
+
+  #player__cta{
+    display: none;
+  }
+
+  #player__artist{
+    width: clamp(100px, 100%, 300px);
+    justify-content: space-around;
+  }
+
+  #controls{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #controls i{
+    transform: scale(1.5)
+  }
+
+  #player{
+    flex-direction: column-reverse;
+    height: 175px;
+    align-items: center;
+    justify-content: center;
+  }
 }
