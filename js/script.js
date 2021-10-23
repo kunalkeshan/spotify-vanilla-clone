@@ -121,7 +121,7 @@ const updateCollection = (songs) => {
         }
 
         if(index%2 !== 0){
-            collection.classList.toggle("reverse")
+            collection.classList.toggle("reverse");
         }
     })
 }
