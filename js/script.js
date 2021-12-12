@@ -1,8 +1,8 @@
 //An array of objects, where each object is a song. 
 // {songs} means destructuring the ojbect from the right.
 //Note: the destructing should be key specific. 
-//If songs is an key in the object, then only it will get the songs array. 
-const {songs} = {
+//If songs is an key in the object, then only it will get the songs array.
+let {songs} = {
     "songs": [
         {
             "name": "Eternal Youth",
@@ -62,6 +62,16 @@ const {songs} = {
         }
     ]
 };
+
+if(!localStorage.getItem("songs")){
+    localStorage.setItem("songs", JSON.stringify(songs))
+} else {
+    songs = JSON.parse(localStorage.getItem("songs"));
+}
+
+const updateStorage = () => {
+    localStorage.setItem("songs", JSON.stringify(songs))
+}
 
 // Getting required elemets, const to not allow reinitialization
 // let for reinitialization of that elements to update from DOM.
@@ -179,6 +189,7 @@ const likeSong = (id, likeBtn, songName) => {
         likeBtn.style.color = "red";
         cardCollection[0].append(createCard(songs[id]));
     }
+    updateStorage();
 }
 
 //update the player head whenever a new song is clicked. 
