@@ -6,5 +6,5 @@ A responsive clone of [open.spotify.com.](https://open.spotify.com/)
   - HTML
   - CSS
   - JS
-  - Check it out here: [https://kunalkeshan.com/spotify-vanilla-clone/](https://kunalkeshan.com/spotify-vanilla-clone/) Ctrl + Click to open in a new tab
+  - Check it out here: [https://spotify-vanilla-clone.netlify.app/](https://spotify-vanilla-clone.netlify.app/) Ctrl + Click to open in a new tab
 
